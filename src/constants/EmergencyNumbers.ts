@@ -1,0 +1,15 @@
+export const EMERGENCY_NUMBERS: { [countryCode: string]: string } = {
+    US: '911',
+    CA: '911',
+    AU: '000',
+    GB: '999',
+    DE: '112',
+    FR: '112',
+    IT: '112',
+    JP: '119',
+    CN: '120',
+    KR: '119',
+    IN: '102',
+    BR: '192',
+    MX: '066',
+  };
