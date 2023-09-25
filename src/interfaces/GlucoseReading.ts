@@ -1,6 +1,6 @@
 export interface GlucoseReading {
-    day: string, // should be date
-    time: string, // should be date
+    day: string, // TODO: should be date
+    time: string, // TODO: should be date
     glucoseValue: number,
     ketoneValue?: number,
 }
