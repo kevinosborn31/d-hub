@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const SettingsPage = () => {
 
     return (
-        <p>Component Content</p>
+        <p>Settings Content</p>
     );
 }
 

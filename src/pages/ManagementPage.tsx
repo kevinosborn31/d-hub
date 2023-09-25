@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const componentName = () => {
+const ManagementPage = () => {
 
     return (
-        <p>Component Content</p>
+        <p>Glucose Content</p>
     );
 }
 
-export default componentName
+export default ManagementPage

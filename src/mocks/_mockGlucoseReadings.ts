@@ -1,0 +1,92 @@
+export const MOCK_GLUCOSE_READINGS = [
+  {
+    day: "25 September",
+    time: "22:30",
+    glucoseValue: 12,
+    ketoneValue: 1,
+  },
+  {
+    day: "10 September",
+    time: "08:45",
+    glucoseValue: 15,
+    ketoneValue: 2,
+  },
+  {
+    day: "5 August",
+    time: "14:15",
+    glucoseValue: 8,
+    ketoneValue: 3,
+  },
+  {
+    day: "20 August",
+    time: "11:20",
+    glucoseValue: 18,
+    ketoneValue: 0,
+  },
+  {
+    day: "15 July",
+    time: "16:50",
+    glucoseValue: 6,
+    ketoneValue: 4,
+  },
+  {
+    day: "12 September",
+    time: "19:30",
+    glucoseValue: 9,
+    ketoneValue: 2,
+  },
+  {
+    day: "3 July",
+    time: "07:55",
+    glucoseValue: 14,
+    ketoneValue: 1,
+  },
+  {
+    day: "28 July",
+    time: "10:10",
+    glucoseValue: 5,
+    ketoneValue: 5,
+  },
+  {
+    day: "8 August",
+    time: "13:40",
+    glucoseValue: 20,
+    ketoneValue: 0,
+  },
+  {
+    day: "17 September",
+    time: "18:00",
+    glucoseValue: 10,
+    ketoneValue: 3,
+  },
+  {
+    day: "11 September",
+    time: "14:00",
+    glucoseValue: 16,
+    ketoneValue: 1,
+  },
+  {
+    day: "13 September",
+    time: "09:15",
+    glucoseValue: 11,
+    ketoneValue: 2,
+  },
+  {
+    day: "21 September",
+    time: "16:30",
+    glucoseValue: 13,
+    ketoneValue: 1,
+  },
+  {
+    day: "18 September",
+    time: "07:20",
+    glucoseValue: 14,
+    ketoneValue: 0,
+  },
+  {
+    day: "24 September",
+    time: "12:45",
+    glucoseValue: 17,
+    ketoneValue: 2,
+  },
+];
