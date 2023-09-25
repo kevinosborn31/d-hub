@@ -1,10 +1,12 @@
+import { User } from "../interfaces/User";
 import { MOCK_GLUCOSE_READINGS } from "./_mockGlucoseReadings";
 
-export const MOCK_USER = {
+export const MOCK_USER: User = {
     givenNames: ["Kevin", "Sean"],
+    surname: "Osborn",
     email: "kevinosborn31@gmail.com",
-    verified: true,
-    profilePictureURL: "placekitten.com/200/200",
+    verified: false,
+    profilePictureURL: "http://placekitten.com/200/200",
     medicareNumber: "230942304",
     sugarRange: [5, 18],
     ketoneWarning: 2,
