@@ -16,7 +16,7 @@ import {
   AppBar,
   Toolbar,
 } from "@mui/material";
-import { useState, React } from "react";
+import { useState } from "react";
 import Iconify from "./Iconify";
 import { useNavigate } from "react-router-dom";
 import { PageRoutes } from "../enums/PageRoutes";

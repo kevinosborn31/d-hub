@@ -1,6 +1,7 @@
 import { GlucoseReading } from "./GlucoseReading";
 
 export interface User {
+    _id: number,
     givenNames: string | string[],
     surname: string,
     email: string,

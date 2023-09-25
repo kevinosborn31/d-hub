@@ -2,6 +2,7 @@ import { User } from "../interfaces/User";
 import { MOCK_GLUCOSE_READINGS } from "./_mockGlucoseReadings";
 
 export const MOCK_USER: User = {
+    _id: 1,
     givenNames: ["Kevin", "Sean"],
     surname: "Osborn",
     email: "kevinosborn31@gmail.com",
