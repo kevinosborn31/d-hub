@@ -58,6 +58,11 @@ const MenuDrawer = () => {
       icon: "eva:settings-2-outline",
       route: PageRoutes.Settings,
     },
+    {
+      name: "Map",
+      icon: "eva:map-outline",
+      route: PageRoutes.Map,
+    },
   ];
 
   const sendToRoute = (route: string) => {

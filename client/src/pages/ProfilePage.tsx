@@ -34,11 +34,11 @@ const ProfilePage = () => {
   const [userEmail, setUserEmail] = useState(email);
   const [verification, setVerification] = useState(verified);
 
-  const handleSugarChange = (event: any) => {
+  const handleSugarChange = (event: { target: { value: any; }; }) => {
     setGlucoseRange([...event.target.value]);
   };
 
-  const handleKetoneChange = (event: any) => {
+  const handleKetoneChange = (event: { target: { value: string; }; }) => {
     const level = event.target.value;
     setKetoneLevel(Number(level));
   }
@@ -64,7 +64,7 @@ const ProfilePage = () => {
           label="Middle name"
           value={userGivenNames[1] ? userGivenNames[1] : ""}
         />
-        <TextField label="Last name" value={userSurname} />
+        <TextField label="Last name" value={userSurname} /> 
       </Box>
       <Box>
         <TextField label="Email" value={userEmail} fullWidth />
@@ -88,7 +88,7 @@ const ProfilePage = () => {
             max={30}
             getAriaLabel={() => "Glucose Range"}
             value={glucoseRange}
-            onChange={handleSugarChange}
+            onChange={() => handleSugarChange}
           />
         </Box>
         <Box>

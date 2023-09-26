@@ -5,4 +5,5 @@ export enum PageRoutes {
     Emergency = '/emergency',
     Settings = '/settings',
     Profile = '/profile',
+    Map = '/map',
 }

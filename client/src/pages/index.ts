@@ -4,3 +4,4 @@ export { default as InformationPage } from "./InformationPage";
 export { default as ManagementPage } from "./ManagementPage";
 export { default as ProfilePage } from "./ProfilePage";
 export { default as SettingsPage } from "./SettingsPage";
+export { default as MapPage } from "./MapPage";
