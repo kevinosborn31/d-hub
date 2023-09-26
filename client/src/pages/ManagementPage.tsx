@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'; // Import the styles
+import 'react-datepicker/dist/react-datepicker.css'; 
 import { Box, TextField } from '@mui/material';
 
 const ManagementPage = () => {
@@ -15,8 +15,8 @@ const ManagementPage = () => {
       <DatePicker
         selected={date}
         onChange={handleDateChange}
-        dateFormat="MMMM d, yyyy" // Format to display the date
-        customInput={<TextField />} // Use Material-UI TextField as the input
+        dateFormat="MMMM d, yyyy"
+        customInput={<TextField />} 
       />
     </Box>
   );
