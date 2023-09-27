@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import MenuDrawer from "./components/MenuDrawer";
-import { DashboardPage, InformationPage, ManagementPage, SettingsPage, MapPage, EmergencyPage, ProfilePage } from "./pages"
+import { DashboardPage, InformationPage, ManagementPage, SettingsPage, MapPage, EmergencyPage, ProfilePage   } from "./pages"
 import { PageRoutes } from "./enums/PageRoutes";
 
 const App = () => {

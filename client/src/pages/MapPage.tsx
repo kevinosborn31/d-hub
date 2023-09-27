@@ -16,7 +16,7 @@ const MapPage = () => {
   const [center, setCenter] = useState(initialCenter);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyA6MOS8FijRYgWnoQUDcL69Jj0K0Q0fkUs" 
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string
   });
 
   const [map, setMap] = useState(null);
@@ -32,7 +32,6 @@ const MapPage = () => {
   }, []);
 
   useEffect(() => {
-    // Use navigator.geolocation to get the user's position
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const userPosition = {
@@ -45,7 +44,7 @@ const MapPage = () => {
         console.error('Error getting user location:', error);
       }
     );
-  }, []); // Empty dependency array to run this effect only once
+  }, []); 
 
   return isLoaded ? (
     <GoogleMap

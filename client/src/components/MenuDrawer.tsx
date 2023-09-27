@@ -1,5 +1,4 @@
 import {
-  Container,
   Drawer,
   Button,
   Box,
@@ -60,7 +59,7 @@ const MenuDrawer = () => {
     },
     {
       name: "Map",
-      icon: "eva:map-outline",
+      icon: "eva:map  -outline",
       route: PageRoutes.Map,
     },
   ];

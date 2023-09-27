@@ -6,4 +6,5 @@ export enum PageRoutes {
     Settings = '/settings',
     Profile = '/profile',
     Map = '/map',
+    Chat = '/chat',
 }

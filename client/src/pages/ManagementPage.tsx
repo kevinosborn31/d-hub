@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'; 
+// import DatePicker from 'react-datepicker';
+// import 'react-datepicker/dist/react-datepicker.css'; 
 import { Box, TextField } from '@mui/material';
 
 const ManagementPage = () => {
@@ -12,12 +12,12 @@ const ManagementPage = () => {
 
   return (
     <Box>
-      <DatePicker
-        selected={date}
-        onChange={handleDateChange}
-        dateFormat="MMMM d, yyyy"
-        customInput={<TextField />} 
-      />
+        {/* <DatePicker
+            selected={date}
+            onChange={handleDateChange}
+            dateFormat="MMMM d, yyyy"
+            customInput={<TextField />} 
+        /> */}
     </Box>
   );
 }

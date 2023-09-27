@@ -16,7 +16,7 @@ export const fetchLocationInfo = async (): Promise<string> => {
                     if (ambulanceNumber) {
                         resolve(ambulanceNumber);
                     } else {
-                        console.error('Emergency number not found for the country:', countryCode);
+                        console.error('Emergency number not found f or th        e country:', countryCode);
                         resolve("000");
                     }
                 }, (error) => {
