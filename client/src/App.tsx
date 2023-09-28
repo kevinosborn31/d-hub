@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import MenuDrawer from "./components/MenuDrawer";
-import { DashboardPage, InformationPage, ManagementPage, SettingsPage, MapPage, EmergencyPage, ProfilePage   } from "./pages"
+import { DashboardPage, InformationPage, LoginPage, RegisterPage, ManagementPage, SettingsPage, MapPage, EmergencyPage, ProfilePage   } from "./pages"
 import { PageRoutes } from "./enums/PageRoutes";
 
 const App = () => {
@@ -23,6 +23,8 @@ const App = () => {
             <Route path={PageRoutes.Settings} element={<SettingsPage />} />
             <Route path={PageRoutes.Profile} element={<ProfilePage />} />
             <Route path={PageRoutes.Map} element={<MapPage />} />
+            <Route path={PageRoutes.Login} element={<LoginPage />} />
+            <Route path={PageRoutes.Register} element={<RegisterPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Box>
