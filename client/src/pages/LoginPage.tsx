@@ -1,62 +1,37 @@
-import { Box, Button, Checkbox, TextField, Typography } from "@mui/material";
-import { useState } from "react";
-import { PageRoutes } from "../enums/PageRoutes";
+import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
+import { Card, Button, Typography, Container } from "@mui/material";
+import { PageRoutes } from "../enums/PageRoutes";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(true); // State to track email validation
 
-  const handleEmailChange = (e: any) => {
-    const enteredEmail = e.target.value;
-    setEmail(enteredEmail);
-
-    // Simple email validation using a regular expression
-    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    setIsValidEmail(emailPattern.test(enteredEmail));
-  };
-
-  const handlePasswordChange = (e: any) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    if (isValidEmail) {
-      // Email is valid, you can proceed with login logic here
+  const loginToGoogle = useGoogleLogin({
+    onSuccess: (tokenResponse: { access_token: string }) => {
+      localStorage.setItem("loginWith", "Google");
+      localStorage.setItem("accessToken", tokenResponse.access_token);
       navigate(PageRoutes.Dashboard);
-    } else {
-      // Email is invalid, show an error message or take appropriate action
-      console.log("Email is invalid");
-    }
-  };
+    },
+  });
 
   return (
-    <Box>
-      <Box>
-        <TextField
-          label="Email"
-          value={email}
-          onChange={handleEmailChange}
-          error={!isValidEmail} // Add error state based on email validation
-          helperText={!isValidEmail ? "Invalid email address" : ""}
-        />
-        <TextField
-          label="Password"
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <Typography>Forgot password?</Typography>
-        <Checkbox />
+    <Container
+      sx={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
+      <Card sx={{ mw: "420px", p: "20px" }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          sx={{ textAlign: "center", marginBottom: "20px" }}
+        >
+          Login with
+        </Typography>
 
-        <Button variant="contained" onClick={handleSubmit}>
-          Login
+        <Button variant="contained" onClick={() => loginToGoogle()}>
+          Google
         </Button>
-        <Button variant="contained" onClick={() => navigate(PageRoutes.Register)}>Register</Button>
-      </Box>
-    </Box>
+      </Card>
+    </Container>
   );
 };
 
