@@ -12,9 +12,8 @@ const EmergencyConfirmationModal: FC<IEmergencyConfirmationModalProps> = ({
   setModalOpen,
   emergencyNumber
 }) => {
-  // TODO implement this 
   const callEmergency = () => {
-    console.log(`calling ${emergencyNumber}`);
+    window.location.href = `tel:${emergencyNumber}`;
   };
 
   return (
