@@ -1,5 +1,4 @@
 import express from "express";
-import { json } from "body-parser";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import cors from "cors";
 

@@ -19,29 +19,17 @@ const ProfilePage = () => {
   };
 
   const onSave = () => {
-    return {
-
-    }
+    // Add your save logic here
   };
 
-  // TODO hook these up
   const [glucoseRange, setGlucoseRange] = useState<number[]>(sugarRange as any);
-  const [ketoneLevel, setKetoneLevel] = useState(ketoneWarning);
-  const [userGivenNames, setUserGivenNames] = useState(givenNames);
-  const [userSurname, setUserSurname] = useState(surname);
-  const [medicare, setMedicare] = useState(medicareNumber);
-  const [profilePicture, setProfilePicture] = useState(profilePictureURL);
-  const [userEmail, setUserEmail] = useState(email);
-  const [verification, setVerification] = useState(verified);
-
-  const handleSugarChange = (event: { target: { value: any; }; }) => {
-    setGlucoseRange([...event.target.value]);
-  };
-
-  const handleKetoneChange = (event: { target: { value: string; }; }) => {
-    const level = event.target.value;
-    setKetoneLevel(Number(level));
-  }
+  const [ketoneLevel, setKetoneLevel] = useState<number>(ketoneWarning as any);
+  const [userGivenNames, setUserGivenNames] = useState<string[]>(givenNames as any);
+  const [userSurname, setUserSurname] = useState<string>(surname);
+  const [medicare, setMedicare] = useState<string>(medicareNumber as any);
+  const [profilePicture, setProfilePicture] = useState<string>(profilePictureURL as any);
+  const [userEmail, setUserEmail] = useState<string>(email);
+  const [verification, setVerification] = useState<boolean>(verified);
 
   return (
     <Box
@@ -59,19 +47,42 @@ const ProfilePage = () => {
         />
       </Box>
       <Box sx={{ display: "flex", gap: "12px" }}>
-        <TextField label="First name" value={userGivenNames[0]} />
+        <TextField
+          label="First name"
+          value={userGivenNames[0]}
+          onChange={(event) =>
+            setUserGivenNames([event.target.value, ...userGivenNames.slice(1)])
+          }
+        />
         <TextField
           label="Middle name"
           value={userGivenNames[1] ? userGivenNames[1] : ""}
+          onChange={(event) =>
+            setUserGivenNames([userGivenNames[0], event.target.value])
+          }
         />
-        <TextField label="Last name" value={userSurname} /> 
+        <TextField
+          label="Last name"
+          value={userSurname}
+          onChange={(event) => setUserSurname(event.target.value)}
+        />
       </Box>
       <Box>
-        <TextField label="Email" value={userEmail} fullWidth />
+        <TextField
+          label="Email"
+          value={userEmail}
+          fullWidth
+          onChange={(event) => setUserEmail(event.target.value)}
+        />
       </Box>
       <Box>
         <Box>
-          <TextField label="Medicare number" value={medicare} fullWidth />
+          <TextField
+            label="Medicare number"
+            value={medicare}
+            fullWidth
+            onChange={(event) => setMedicare(event.target.value)}
+          />
         </Box>
         <Box sx={{ marginTop: "16px" }}>
           {verification ? (
@@ -88,7 +99,7 @@ const ProfilePage = () => {
             max={30}
             getAriaLabel={() => "Glucose Range"}
             value={glucoseRange}
-            onChange={() => handleSugarChange}
+            onChange={(_, newValue) => setGlucoseRange(newValue as number[])}
           />
         </Box>
         <Box>
@@ -98,7 +109,7 @@ const ProfilePage = () => {
             variant="outlined"
             fullWidth
             value={ketoneLevel}
-            onChange={() => handleKetoneChange}
+            onChange={(event) => setKetoneLevel(Number(event.target.value))}
           />
         </Box>
         <Box sx={{ marginTop: "16px" }}>
