@@ -1,8 +1,7 @@
 import axios from 'axios';
 import smtpConfig from "../config/smtp";
 import { validateEmailRequest } from '../utils/validateEmailRequest';
-
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 export const sendEmail = async (recipients, subject, fromAddress, content) => {
     const transporter = nodemailer.createTransport(smtpConfig);

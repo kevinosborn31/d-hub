@@ -107,7 +107,6 @@ const ProfilePage = () => {
           <TextField
             type="number"
             variant="outlined"
-            fullWidth
             value={ketoneLevel}
             onChange={(event) => setKetoneLevel(Number(event.target.value))}
           />

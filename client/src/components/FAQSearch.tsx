@@ -6,13 +6,17 @@ import { InformationItem } from '../interfaces/InformationItem';
 const FAQSearch = () => {
     const [searchResults, setSearchResults] = useState<InformationItem[]>(informationItems);
     const [searchValue, setSearchValue] = useState<string>('');
-    const [content, setContent] = useState<string>('');
+    const [selectedItem, setSelectedItem] = useState<InformationItem | null>(null);
 
     const handleSearch = (searchValue: string) => {
         setSearchValue(searchValue);
         const filteredInfo = informationItems.filter((item: InformationItem) => item.title.includes(searchValue) || item.content.includes(searchValue));
 
         setSearchResults(filteredInfo);
+    };
+
+    const handleItemClick = (item: InformationItem) => {
+        setSelectedItem(item);
     };
 
     return (
@@ -33,9 +37,9 @@ const FAQSearch = () => {
                         <List>
                             {searchResults.map((item, index) => (
                                 <ListItem sx={{ width: '100%' }} key={index}>
-                                <ListItemButton onClick={() => setContent(item.content)} >
-                                    <Typography>{item.title}</Typography>
-                                </ListItemButton>
+                                    <ListItemButton onClick={() => handleItemClick(item)}>
+                                        <Typography>{item.title}</Typography>
+                                    </ListItemButton>
                                 </ListItem>
                             ))}
                         </List> :
@@ -43,8 +47,8 @@ const FAQSearch = () => {
                         <Typography sx={{ marginBottom: '8px'}}>No search results found</Typography>
                         {informationItems.map((item, index) => (
                             <ListItem sx={{ width: '100%' }} key={index}>
-                                <ListItemButton onClick={() => setContent(item.content)} >
-                                <Typography>{item.title}</Typography>
+                                <ListItemButton onClick={() => handleItemClick(item)}>
+                                    <Typography>{item.title}</Typography>
                                 </ListItemButton>
                             </ListItem>
                         ))}
@@ -53,7 +57,12 @@ const FAQSearch = () => {
                 </Box>
             </Box>
             <Box sx={{ flex: "75%", padding: "32px" }}>
-                {content}
+                {selectedItem && (
+                    <Box>
+                        <Typography variant="h2">{selectedItem.title}</Typography>
+                        <Typography>{selectedItem.content}</Typography>
+                    </Box>
+                )}
             </Box>
         </Box>
     );
